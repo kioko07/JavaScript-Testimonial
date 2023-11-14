@@ -1,0 +1,46 @@
+const testimonials = [
+    {
+      name: "Titus Kioko",
+      picture: "images/myicon.jpg",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ea cumque ullam cum natus minima odio magni explicabo nobis neque gdfhdfhf."
+
+    },
+    {
+    name: "Fridah",
+    picture: "images/background.jpg",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ea cumque ullam cum natus minima odio magni explicabo nobis neque fh;/llkhj."
+  },
+  {
+    name: "Timo",
+    picture: "images/laptop.jpg",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ea cumque ullam cum natus minima odio magni explicabo nobis neque fhgkjlkljv. "
+  },
+  {
+    name: "Jacob",
+    picture: "images/coffee.jpg",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ea cumque ullam cum natus minima odio magni explicabo nobis neque wewrhtkj."
+  },
+];
+
+const imagesEl = document.querySelector("img");
+const textEl= document.querySelector(".text");
+const nameEl = document.querySelector(".user");
+
+let index = 0;
+
+updateTestimonial();
+
+function updateTestimonial(){
+  const { name, picture, text} = testimonials[index];
+  imagesEl.src = picture;
+  textEl.innerText = text;
+  nameEl.innerText = name;
+  index++
+  if (index === testimonials.length){
+    index = 0;
+  }
+  setTimeout(()=>{
+    updateTestimonial();
+  }, 4000);
+};
+
